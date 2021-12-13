@@ -74,6 +74,14 @@ contract DotsNFT is ERC721Enumerable, Ownable, Pausable {
     emit ERC20Exit(token, to, amount);
   }
 
+  function pause() external onlyOwner {
+    _pause();
+  }
+
+  function unpause() external onlyOwner {
+    _unpause();
+  }
+
   function getPlot(uint256 tokenId)
     public
     view

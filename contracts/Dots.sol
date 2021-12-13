@@ -43,6 +43,14 @@ contract Dots is ERC20, Ownable, Pausable {
     _burn(account, amount);
   }
 
+  function pause() external onlyOwner {
+    _pause();
+  }
+
+  function unpause() external onlyOwner {
+    _unpause();
+  }
+
   /// @dev See {ERC20-_beforeTokenTransfer} - the contract must not be paused.
   function _beforeTokenTransfer(
     address from,
